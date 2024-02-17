@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FaPlus } from "react-icons/fa";
 import Todo from "./components/Todo";
 
 function App() {
@@ -9,7 +10,7 @@ function App() {
         <h1 className="text-center font-bold text-3xl">Todo App</h1>
         <form className="w-full flex justify-between gap-2 mt-4">
           <input className="w-full p-2" placeholder="Add todos" type="text" />
-          <button className="bg-purple-500 text-white px-4 ">+</button>
+          <button className="bg-purple-500 text-white px-4 "><FaPlus size={15}/></button>
         </form>
         <ul>
           {todos.map((todo, inex) => (
