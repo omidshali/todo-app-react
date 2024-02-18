@@ -44,10 +44,10 @@ function App() {
         isCompleted: false,
       });
       console.log("Document written with ID: ", docRef.id);
-      setTodoInput("");
     } catch (e) {
       console.error("Error adding document: ", e);
     }
+    setTodoInput("");
   };
   // update a todo
   const updateState = async (todo) => {
