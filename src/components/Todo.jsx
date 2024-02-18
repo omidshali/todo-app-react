@@ -1,12 +1,30 @@
 import { RiDeleteBin6Line } from "react-icons/ri";
-const Todo = (props) => {
+const Todo = ({ todo, toggleComplet, deleteTodo }) => {
   return (
-    <li className="flex justify-between bg-gray-100 my-2 p-2 shadow">
+    <li
+      className={
+        todo.isCompleted
+          ? "flex justify-between bg-gray-400 first:my-0 last:mb-0 my-2 p-2 shadow"
+          : "flex justify-between bg-gray-100 first:my-0 last:mb-0 my-2 p-2 shadow"
+      }
+    >
       <div className="flex gap-2">
-        <input className="" type="checkbox" />
-        <p className="">{props.todo.text}</p>
+        <input
+          onChange={() => toggleComplet(todo)}
+          className="cursor-pointer"
+          type="checkbox"
+          checked={todo.isCompleted ? "checked" : ""}
+        />
+        <p
+          onClick={() => toggleComplet(todo)}
+          className={
+            todo.isCompleted ? "line-through cursor-pointer" : "cursor-pointer"
+          }
+        >
+          {todo.text}
+        </p>
       </div>
-      <button className="text-gray-800">
+      <button onClick={() => deleteTodo(todo.id)} className="text-gray-800">
         <RiDeleteBin6Line />
       </button>
     </li>
