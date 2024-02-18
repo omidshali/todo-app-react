@@ -81,7 +81,7 @@ function App() {
           </button>
         </form>
         <div className=" w-full ">
-          <main className="overflow-y-auto h-[350px] max-h-screen mt-2">
+          <main className="overflow-y-auto h-[500px] max-h-screen mt-2">
             <ul className="">
               {todos.map((todo, inex) => (
                 <Todo
